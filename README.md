@@ -4,7 +4,9 @@
 > 独一无二的猫猫狗狗会来做客，摸摸、锁定、合影、收集明信片与成就。
 > 缩放面板还能看它们从悠闲到拥挤的百态，以及热情家伙们的争宠大战。
 
-![舞台全景](docs/screenshots/yard-overview.png)
+| 软萌手绘 | 几何简笔 |
+|---|---|
+| ![软萌手绘风格的小院](docs/screenshots/yard-real.png) | ![几何简笔风格的小院](docs/screenshots/yard-geo.png) |
 
 ## 特色
 
