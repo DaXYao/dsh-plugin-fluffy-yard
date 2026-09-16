@@ -1,0 +1,5 @@
+# dsh-plugin-fluffy-yard 组合层：按包名插入本包的插件行
+#（profile 的 node_modules 经 pnpm link 解析到本仓库）。
+- insert:
+    - id: pet-yard
+      name: dsh-plugin-fluffy-yard

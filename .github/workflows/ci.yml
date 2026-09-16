@@ -1,0 +1,22 @@
+name: ci
+on:
+  push: { branches: [main] }
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "${{ matrix.node }}", cache: npm }
+      - run: npm install
+      - run: npm run typecheck
+      - run: npm run test
+      - run: npm run bundle
+      - name: bundle contract check
+        run: |
+          head -c 80 lib/client.js | grep -q "__ModuleLoader__.load" || { echo "client.js 工厂包裹缺失"; exit 1; }
+          test -s lib/index.js || { echo "index.js 缺失"; exit 1; }
